@@ -1,0 +1,2289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bryan | Web Developer & Digital Growth Specialist | MXXE Agency</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Professional Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Professional Psychology-Based Colors */
+            --primary-bg: #0F1419;
+            --secondary-bg: #1A1F2E;
+            --card-bg: #242B3D;
+            
+            /* Trust & Professionalism: Blue tones */
+            --primary-blue: #3B82F6;
+            --blue-light: #60A5FA;
+            --blue-dark: #2563EB;
+            
+            /* Success & Growth: Green */
+            --success: #10B981;
+            --success-light: #34D399;
+            
+            /* Energy & Urgency: Orange/Amber */
+            --accent-orange: #F59E0B;
+            --accent-warm: #FBBF24;
+            
+            /* Premium & Sophistication: Purple */
+            --purple: #8B5CF6;
+            --purple-light: #A78BFA;
+            
+            /* Text */
+            --text-primary: #F9FAFB;
+            --text-secondary: #9CA3AF;
+            --text-muted: #6B7280;
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+            --gradient-success: linear-gradient(135deg, #10B981 0%, #3B82F6 100%);
+            --gradient-warm: linear-gradient(135deg, #F59E0B 0%, #EF4444 100%);
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --shadow-glow: 0 0 30px rgba(59, 130, 246, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Background Effects */
+        .bg-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.12;
+            animation: float 25s ease-in-out infinite;
+        }
+
+        .orb-1 {
+            width: 700px;
+            height: 700px;
+            background: var(--primary-blue);
+            top: -200px;
+            right: -200px;
+        }
+
+        .orb-2 {
+            width: 600px;
+            height: 600px;
+            background: var(--purple);
+            bottom: -150px;
+            left: -150px;
+            animation-delay: 8s;
+        }
+
+        .orb-3 {
+            width: 500px;
+            height: 500px;
+            background: var(--success);
+            top: 40%;
+            left: 50%;
+            animation-delay: 16s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(60px, -60px) scale(1.1); }
+            66% { transform: translate(-40px, 40px) scale(0.9); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 5%;
+            background: rgba(15, 20, 25, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 0.7rem 5%;
+            background: rgba(15, 20, 25, 0.95);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .nav-links a i {
+            font-size: 0.9rem;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        /* Page Container */
+        .page {
+            min-height: 100vh;
+            position: relative;
+            z-index: 1;
+            padding: 120px 5% 80px;
+            display: none;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            margin-bottom: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        h3 {
+            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+            box-shadow: none;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .btn-success {
+            background: var(--gradient-success);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            padding: 2rem 0;
+        }
+
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--primary-blue);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2.5rem;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .image-container::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            border: 3px solid var(--primary-blue);
+            border-radius: 24px;
+            z-index: -1;
+            animation: borderPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes borderPulse {
+            0%, 100% { transform: translate(0, 0); opacity: 0.5; }
+            50% { transform: translate(-10px, -10px); opacity: 1; }
+        }
+
+        .profile-image {
+            width: 100%;
+            height: auto;
+            border-radius: 24px;
+            display: block;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        .social-link.instagram:hover {
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+            color: white;
+            border-color: transparent;
+        }
+
+        .social-link.linkedin:hover {
+            background: #0077B5;
+            color: white;
+            border-color: transparent;
+        }
+
+        .social-link.github:hover {
+            background: #333;
+            color: white;
+            border-color: transparent;
+        }
+
+        .social-link.twitter:hover {
+            background: #1DA1F2;
+            color: white;
+            border-color: transparent;
+        }
+
+        /* Cards */
+        .service-card, .project-card, .blog-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before, .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .service-card:hover::before, .project-card:hover::before {
+            opacity: 0.03;
+        }
+
+        .service-card:hover, .project-card:hover, .blog-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+        }
+
+        /* Service Icon */
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--gradient-primary);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .service-price {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.6rem 1.5rem;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--primary-blue);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        /* Feature Lists */
+        .feature-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .feature-list li {
+            padding: 0.6rem 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .feature-list li i {
+            color: var(--success);
+            font-size: 0.9rem;
+        }
+
+        /* Grids */
+        .services-grid, .projects-grid, .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        /* Calculator */
+        .calculator {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 4rem;
+        }
+
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .calc-section {
+            padding: 2rem;
+            background: var(--secondary-bg);
+            border-radius: 16px;
+        }
+
+        .calc-option {
+            margin: 1.5rem 0;
+        }
+
+        .calc-option label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .calc-option label i {
+            color: var(--primary-blue);
+        }
+
+        select, input[type="range"] {
+            width: 100%;
+            padding: 1rem;
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        select:focus, input[type="range"]:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .price-display {
+            background: var(--gradient-primary);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .price-display h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .price-amount {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .price-breakdown {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .price-breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.8rem 0;
+            color: white;
+            font-weight: 500;
+        }
+
+        /* Project Metrics */
+        .project-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .metric {
+            text-align: center;
+            padding: 1rem;
+            background: var(--secondary-bg);
+            border-radius: 12px;
+        }
+
+        .metric-value {
+            display: block;
+            font-weight: 700;
+            color: var(--success);
+            font-size: 1.4rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .metric-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-item {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .skill-name i {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+        }
+
+        .skill-percentage {
+            color: var(--success);
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .skill-bar {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 0;
+        }
+
+        /* Tags */
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            padding: 0.4rem 1rem;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--primary-blue);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        /* MXXE Section */
+        .mxxe-hero {
+            background: var(--gradient-primary);
+            padding: 5rem 3rem;
+            border-radius: 24px;
+            text-align: center;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mxxe-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
+            opacity: 0.3;
+        }
+
+        .mxxe-hero h2 {
+            color: white;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .mxxe-hero p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .mxxe-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .mxxe-stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            display: block;
+        }
+
+        .mxxe-stat-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateX(10px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        /* Forms */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        label {
+            color: var(--text-primary);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        label i {
+            color: var(--primary-blue);
+            font-size: 0.9rem;
+        }
+
+        input, textarea, select {
+            padding: 1rem 1.5rem;
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        /* WhatsApp Widget */
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+        }
+
+        .whatsapp-button {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            text-decoration: none;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.5);
+            transition: all 0.3s ease;
+            animation: bounceIn 1s ease-out;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 32px rgba(37, 211, 102, 0.7);
+        }
+
+        /* Booking */
+        .booking-section {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 3rem;
+        }
+
+        .booking-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .booking-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem;
+            background: var(--secondary-bg);
+            border-radius: 12px;
+        }
+
+        .booking-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        /* Blog */
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            border-radius: 16px 16px 0 0;
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .read-more {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+
+        .read-more:hover {
+            gap: 1rem;
+        }
+
+        /* Scroll Animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero, .calculator-grid, .contact-grid, .booking-grid, .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .nav-links a i {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page {
+                padding: 100px 5% 60px;
+            }
+
+            .whatsapp-widget {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-button {
+                width: 56px;
+                height: 56px;
+                font-size: 1.7rem;
+            }
+
+            .social-links {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Effects -->
+    <div class="bg-effect">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-code"></i>
+                BRYAN
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active" data-page="home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#services" class="nav-link" data-page="services"><i class="fas fa-briefcase"></i> Services</a></li>
+                <li><a href="#portfolio" class="nav-link" data-page="portfolio"><i class="fas fa-folder-open"></i> Portfolio</a></li>
+                <li><a href="#mxxe" class="nav-link" data-page="mxxe"><i class="fas fa-rocket"></i> MXXE</a></li>
+                <li><a href="#blog" class="nav-link" data-page="blog"><i class="fas fa-newspaper"></i> Blog</a></li>
+                <li><a href="#contact" class="nav-link" data-page="contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- WhatsApp Widget -->
+    <div class="whatsapp-widget">
+        <a href="https://wa.me/256780160147?text=Hi%20Bryan,%20I'm%20interested%20in%20your%20services!" 
+           target="_blank" 
+           class="whatsapp-button"
+           title="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- HOME PAGE -->
+    <div class="page active" id="home">
+        <div class="container">
+            <div class="hero">
+                <div class="hero-content">
+                    <span class="hero-label">
+                        <i class="fas fa-circle" style="font-size: 0.5rem; color: var(--success);"></i>
+                        Available for Projects
+                    </span>
+                    <h1>Transforming Ideas Into Digital Success</h1>
+                    <p class="subtitle">
+                        <i class="fas fa-check-circle" style="color: var(--success);"></i>
+                        Web developer & digital growth specialist with 1.4 years of experience. 
+                        I build fast, responsive websites and drive 7-25% growth through strategic marketing. 
+                        From code to conversion—I handle it all.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn nav-link" data-page="contact">
+                            <i class="fas fa-paper-plane"></i>
+                            Get Started
+                        </a>
+                        <a href="#portfolio" class="btn btn-secondary nav-link" data-page="portfolio">
+                            <i class="fas fa-eye"></i>
+                            View Work
+                        </a>
+                    </div>
+                    
+                    <!-- Social Links with Latest Icons -->
+                    <div class="social-links">
+                        <a href="#" class="social-link instagram" title="Instagram" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link linkedin" title="LinkedIn" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link github" title="GitHub" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link twitter" title="Twitter/X" target="_blank">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number" data-target="7">0</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="100">0</span>
+                            <span class="stat-label">% Satisfaction</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="25">0</span>
+                            <span class="stat-label">% Growth Rate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-container">
+                        <img src="profile-photo.jpg" alt="Bryan - Web Developer" class="profile-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVICES PAGE -->
+    <div class="page" id="services">
+        <div class="container">
+            <h2><i class="fas fa-briefcase" style="color: var(--primary-blue);"></i> Services & Pricing</h2>
+            <p class="subtitle">
+                Professional web development and digital marketing solutions with transparent pricing. 
+                Choose the package that fits your needs.
+            </p>
+
+            <div class="services-grid scroll-reveal">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-blog"></i>
+                    </div>
+                    <h3>Blog Website</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        News and information website with clean design, SEO optimization, and easy content management.
+                    </p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> WordPress/HTML setup</li>
+                        <li><i class="fas fa-check-circle"></i> Responsive design</li>
+                        <li><i class="fas fa-check-circle"></i> SEO ready</li>
+                        <li><i class="fas fa-check-circle"></i> Easy content updates</li>
+                        <li><i class="fas fa-check-circle"></i> Contact forms</li>
+                    </ul>
+                    <div class="service-price">$75 - $250</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Medium Business Site</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        Professional multi-page website with advanced features, custom design, and integrations.
+                    </p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> 10-20 pages</li>
+                        <li><i class="fas fa-check-circle"></i> Custom design</li>
+                        <li><i class="fas fa-check-circle"></i> Advanced SEO</li>
+                        <li><i class="fas fa-check-circle"></i> API integrations</li>
+                        <li><i class="fas fa-check-circle"></i> Analytics setup</li>
+                    </ul>
+                    <div class="service-price">$300 - $1,500</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>E-Commerce Platform</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        Full-featured online store with payment processing, inventory management, and security.
+                    </p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Product management</li>
+                        <li><i class="fas fa-check-circle"></i> Payment gateway</li>
+                        <li><i class="fas fa-check-circle"></i> Shopping cart</li>
+                        <li><i class="fas fa-check-circle"></i> Order tracking</li>
+                        <li><i class="fas fa-check-circle"></i> SSL security</li>
+                    </ul>
+                    <div class="service-price">$750 - $3,500</div>
+                </div>
+            </div>
+
+            <!-- Pricing Calculator -->
+            <div class="calculator scroll-reveal">
+                <h2 style="text-align: center; margin-bottom: 1rem;">
+                    <i class="fas fa-calculator" style="color: var(--primary-blue);"></i> 
+                    Website Pricing Calculator
+                </h2>
+                <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">
+                    Get an instant estimate for your project
+                </p>
+                
+                <div class="calculator-grid">
+                    <div class="calc-section">
+                        <div class="calc-option">
+                            <label for="websiteType">
+                                <i class="fas fa-laptop-code"></i>
+                                Website Type
+                            </label>
+                            <select id="websiteType">
+                                <option value="blog">Blog/News Site ($75-$250)</option>
+                                <option value="medium">Medium Business Site ($300-$1,500)</option>
+                                <option value="ecommerce">E-Commerce ($750-$3,500)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="calc-option">
+                            <label for="pages">
+                                <i class="fas fa-file-alt"></i>
+                                Number of Pages: <span id="pagesValue">5</span>
+                            </label>
+                            <input type="range" id="pages" min="1" max="50" value="5">
+                        </div>
+                        
+                        <div class="calc-option">
+                            <label for="features">
+                                <i class="fas fa-puzzle-piece"></i>
+                                Additional Features
+                            </label>
+                            <select id="features">
+                                <option value="0">Basic (Included)</option>
+                                <option value="150">+ Custom Forms ($150)</option>
+                                <option value="300">+ E-commerce Integration ($300)</option>
+                                <option value="200">+ Blog System ($200)</option>
+                                <option value="250">+ Booking System ($250)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="calc-option">
+                            <label for="timeline">
+                                <i class="fas fa-clock"></i>
+                                Project Timeline
+                            </label>
+                            <select id="timeline">
+                                <option value="1">Standard (2-3 weeks)</option>
+                                <option value="1.3">Rush (1 week) +30%</option>
+                                <option value="0.9">Flexible (4+ weeks) -10%</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="calc-section">
+                        <div class="price-display">
+                            <h3>Estimated Price</h3>
+                            <div class="price-amount" id="totalPrice">$0</div>
+                            <div class="price-breakdown">
+                                <div class="price-breakdown-item">
+                                    <span>Base Price:</span>
+                                    <span id="basePrice">$0</span>
+                                </div>
+                                <div class="price-breakdown-item">
+                                    <span>Additional Features:</span>
+                                    <span id="featuresPrice">$0</span>
+                                </div>
+                                <div class="price-breakdown-item">
+                                    <span>Timeline Adjustment:</span>
+                                    <span id="timelinePrice">$0</span>
+                                </div>
+                            </div>
+                            <button class="btn" style="margin-top: 2rem; width: 100%; background: white; color: var(--primary-blue);" onclick="document.querySelector('[data-page=contact]').click()">
+                                <i class="fas fa-file-invoice"></i>
+                                Request Quote
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PORTFOLIO PAGE -->
+    <div class="page" id="portfolio">
+        <div class="container">
+            <h2><i class="fas fa-folder-open" style="color: var(--primary-blue);"></i> Featured Projects</h2>
+            <p class="subtitle">
+                Showcasing successful projects that drove real results for clients across various industries.
+            </p>
+
+            <div class="projects-grid scroll-reveal">
+                <!-- Project cards with icons -->
+                <div class="project-card">
+                    <div style="padding: 2rem 0; text-align: center; font-size: 4rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 16px; margin-bottom: 1.5rem;">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag"><i class="fab fa-wordpress"></i> WordPress</span>
+                        <span class="tag"><i class="fas fa-search"></i> SEO</span>
+                        <span class="tag"><i class="fas fa-mobile-alt"></i> Responsive</span>
+                    </div>
+                    <h3>Tech Startup Landing Page</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        Modern landing page for a SaaS company with lead capture forms and analytics integration.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">+180%</span>
+                            <span class="metric-label">Traffic Growth</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">12%</span>
+                            <span class="metric-label">Conversion Rate</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div style="padding: 2rem 0; text-align: center; font-size: 4rem; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; border-radius: 16px; margin-bottom: 1.5rem;">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag"><i class="fas fa-shopping-bag"></i> E-commerce</span>
+                        <span class="tag"><i class="fas fa-credit-card"></i> Payments</span>
+                        <span class="tag"><i class="fas fa-mobile"></i> Mobile-First</span>
+                    </div>
+                    <h3>Fashion E-Commerce Store</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        Complete online store with inventory management, secure payments, and order tracking.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">$45K</span>
+                            <span class="metric-label">Monthly Revenue</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">89%</span>
+                            <span class="metric-label">Mobile Traffic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div style="padding: 2rem 0; text-align: center; font-size: 4rem; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; border-radius: 16px; margin-bottom: 1.5rem;">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag"><i class="fas fa-hashtag"></i> Social Media</span>
+                        <span class="tag"><i class="fab fa-instagram"></i> Instagram</span>
+                        <span class="tag"><i class="fas fa-chart-line"></i> Growth</span>
+                    </div>
+                    <h3>Instagram Growth Campaign</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        Strategic social media campaign with algorithm optimization and content strategy.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">+250%</span>
+                            <span class="metric-label">Follower Growth</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">4.8%</span>
+                            <span class="metric-label">Engagement Rate</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div style="padding: 2rem 0; text-align: center; font-size: 4rem; background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white; border-radius: 16px; margin-bottom: 1.5rem;">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag"><i class="fas fa-code"></i> HTML/CSS/JS</span>
+                        <span class="tag"><i class="fas fa-calendar-check"></i> Booking</span>
+                        <span class="tag"><i class="fas fa-shield-alt"></i> Secure</span>
+                    </div>
+                    <h3>Healthcare Clinic Website</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        Professional medical website with online booking, patient portal, and secure messaging.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">300+</span>
+                            <span class="metric-label">Online Bookings</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">0.9s</span>
+                            <span class="metric-label">Load Time</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div style="padding: 2rem 0; text-align: center; font-size: 4rem; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; border-radius: 16px; margin-bottom: 1.5rem;">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag"><i class="fab fa-wordpress"></i> WordPress</span>
+                        <span class="tag"><i class="fas fa-map-marker-alt"></i> Local SEO</span>
+                        <span class="tag"><i class="fas fa-list-ul"></i> Menu</span>
+                    </div>
+                    <h3>Restaurant Website & Ordering</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        Beautiful restaurant site with online menu, reservation system, and delivery integration.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">+85%</span>
+                            <span class="metric-label">Online Orders</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">#1</span>
+                            <span class="metric-label">Google Ranking</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div style="padding: 2rem 0; text-align: center; font-size: 4rem; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: white; border-radius: 16px; margin-bottom: 1.5rem;">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag"><i class="fas fa-at"></i> Email Marketing</span>
+                        <span class="tag"><i class="fas fa-robot"></i> Automation</span>
+                        <span class="tag"><i class="fas fa-chart-bar"></i> Analytics</span>
+                    </div>
+                    <h3>Email Marketing Campaign</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        Automated email sequences with segmentation, A/B testing, and conversion tracking.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <span class="metric-value">38%</span>
+                            <span class="metric-label">Open Rate</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">8.5%</span>
+                            <span class="metric-label">Click Rate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div style="margin-top: 6rem;">
+                <h2><i class="fas fa-code" style="color: var(--primary-blue);"></i> Technical Skills</h2>
+                <p class="subtitle">
+                    Expertise across web development, deployment, and digital marketing.
+                </p>
+
+                <div class="skills-grid scroll-reveal">
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">
+                                <i class="fab fa-html5"></i>
+                                HTML & CSS
+                            </span>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">
+                                <i class="fab fa-js"></i>
+                                JavaScript
+                            </span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">
+                                <i class="fab fa-wordpress"></i>
+                                WordPress
+                            </span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">
+                                <i class="fas fa-search"></i>
+                                SEO Optimization
+                            </span>
+                            <span class="skill-percentage">88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="88"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">
+                                <i class="fas fa-hashtag"></i>
+                                Social Media Marketing
+                            </span>
+                            <span class="skill-percentage">92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="92"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">
+                                <i class="fas fa-envelope"></i>
+                                Email Marketing
+                            </span>
+                            <span class="skill-percentage">87%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="87"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">
+                                <i class="fas fa-server"></i>
+                                DNS & Deployment
+                            </span>
+                            <span class="skill-percentage">93%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="93"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">
+                                <i class="fas fa-chart-line"></i>
+                                Strategy & Analytics
+                            </span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MXXE AGENCY PAGE -->
+    <div class="page" id="mxxe">
+        <div class="container">
+            <div class="mxxe-hero scroll-reveal">
+                <h2><i class="fas fa-rocket"></i> MXXE AGENCY</h2>
+                <p>
+                    Digital Growth Specialists • Founded 2023<br>
+                    We don't just build websites—we build growth engines that deliver 7-25% measurable results.
+                </p>
+                
+                <div class="mxxe-stats">
+                    <div class="mxxe-stat">
+                        <span class="mxxe-stat-number">7-25%</span>
+                        <span class="mxxe-stat-label">Average Growth Rate</span>
+                    </div>
+                    <div class="mxxe-stat">
+                        <span class="mxxe-stat-number">7</span>
+                        <span class="mxxe-stat-label">Clients Served</span>
+                    </div>
+                    <div class="mxxe-stat">
+                        <span class="mxxe-stat-number">100%</span>
+                        <span class="mxxe-stat-label">Satisfaction Rate</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 5rem;"><i class="fas fa-box-open" style="color: var(--primary-blue);"></i> Agency Packages</h2>
+            <p class="subtitle">
+                Comprehensive digital marketing solutions designed to scale your business.
+            </p>
+
+            <div class="services-grid scroll-reveal">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Basic Growth Package</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        Perfect for businesses starting their digital growth journey.
+                    </p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Ad Campaign Management</li>
+                        <li><i class="fas fa-check-circle"></i> Email Marketing Setup</li>
+                        <li><i class="fas fa-check-circle"></i> Strategy Reframing</li>
+                        <li><i class="fas fa-check-circle"></i> Monthly Analytics Reports</li>
+                        <li><i class="fas fa-check-circle"></i> Competitor Analysis</li>
+                        <li><i class="fas fa-check-circle"></i> 2 Strategy Sessions/Month</li>
+                    </ul>
+                    <div class="service-price">$1,609/month</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Pro Growth Package</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        Complete digital ecosystem for serious business growth.
+                    </p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Everything in Basic Package</li>
+                        <li><i class="fas fa-check-circle"></i> Custom Website Development</li>
+                        <li><i class="fas fa-check-circle"></i> Social Media Management</li>
+                        <li><i class="fas fa-check-circle"></i> Advanced Pro Strategies</li>
+                        <li><i class="fas fa-check-circle"></i> Content Creation & Copywriting</li>
+                        <li><i class="fas fa-check-circle"></i> Conversion Rate Optimization</li>
+                        <li><i class="fas fa-check-circle"></i> Weekly Strategy Sessions</li>
+                        <li><i class="fas fa-check-circle"></i> Priority Support</li>
+                    </ul>
+                    <div class="service-price">$3,499/month</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Custom Enterprise</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        Tailored solutions for established businesses with specific needs.
+                    </p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Everything in Pro Package</li>
+                        <li><i class="fas fa-check-circle"></i> Dedicated Account Manager</li>
+                        <li><i class="fas fa-check-circle"></i> Custom Integrations & APIs</li>
+                        <li><i class="fas fa-check-circle"></i> Multi-Platform Automation</li>
+                        <li><i class="fas fa-check-circle"></i> Advanced Analytics Dashboard</li>
+                        <li><i class="fas fa-check-circle"></i> Brand Strategy Development</li>
+                        <li><i class="fas fa-check-circle"></i> 24/7 Priority Support</li>
+                        <li><i class="fas fa-check-circle"></i> Quarterly Business Reviews</li>
+                    </ul>
+                    <div class="service-price">Custom Quote</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 5rem; background: var(--card-bg); padding: 3rem; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.05);">
+                <h2><i class="fas fa-tools" style="color: var(--primary-blue);"></i> What We Do</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div>
+                        <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">
+                            <i class="fab fa-instagram"></i> Social Media Marketing
+                        </h3>
+                        <p style="color: var(--text-secondary);">Instagram, Facebook, TikTok, LinkedIn, Twitter - We master the algorithms and create content that converts followers into customers.</p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">
+                            <i class="fas fa-bullseye"></i> Paid Advertising
+                        </h3>
+                        <p style="color: var(--text-secondary);">Facebook Ads, Instagram Ads, Google Ads - Strategic campaigns with proven ROI. We don't waste your ad budget.</p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">
+                            <i class="fas fa-envelope-open-text"></i> Email Marketing
+                        </h3>
+                        <p style="color: var(--text-secondary);">Automated sequences, segmentation, A/B testing - Turn your email list into a revenue machine.</p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">
+                            <i class="fas fa-palette"></i> Content Strategy
+                        </h3>
+                        <p style="color: var(--text-secondary);">We create content that resonates with your audience and aligns with platform algorithms for maximum reach.</p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">
+                            <i class="fas fa-chart-bar"></i> Growth Hacking
+                        </h3>
+                        <p style="color: var(--text-secondary);">Data-driven strategies that scale. We find untapped opportunities and exploit them before your competitors do.</p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">
+                            <i class="fas fa-sync-alt"></i> Strategy Optimization
+                        </h3>
+                        <p style="color: var(--text-secondary);">Continuous testing and refinement. We adapt to market changes and algorithm updates to keep you ahead.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BLOG PAGE -->
+    <div class="page" id="blog">
+        <div class="container">
+            <h2><i class="fas fa-newspaper" style="color: var(--primary-blue);"></i> Latest Insights</h2>
+            <p class="subtitle">
+                Tips, strategies, and industry insights to help you grow your digital presence.
+            </p>
+
+            <div class="blog-grid scroll-reveal">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> March 2026</span>
+                            <span><i class="fas fa-clock"></i> 5 min read</span>
+                        </div>
+                        <h3>How to Increase Instagram Engagement by 300%</h3>
+                        <p class="blog-excerpt" style="color: var(--text-secondary);">
+                            Discover the algorithm secrets and content strategies that helped our clients triple their engagement rates in just 60 days.
+                        </p>
+                        <a href="#" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> February 2026</span>
+                            <span><i class="fas fa-clock"></i> 8 min read</span>
+                        </div>
+                        <h3>5 DNS Mistakes That Are Killing Your Website</h3>
+                        <p class="blog-excerpt" style="color: var(--text-secondary);">
+                            Learn about common DNS configuration errors and how to fix them. Real case studies from clients I've helped.
+                        </p>
+                        <a href="#" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> February 2026</span>
+                            <span><i class="fas fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h3>Email Marketing ROI: Why It's Still the Best Channel</h3>
+                        <p class="blog-excerpt" style="color: var(--text-secondary);">
+                            Email marketing returns $42 for every $1 spent. Here's how to build campaigns that actually convert.
+                        </p>
+                        <a href="#" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> January 2026</span>
+                            <span><i class="fas fa-clock"></i> 10 min read</span>
+                        </div>
+                        <h3>The Complete Guide to Social Media Algorithms in 2026</h3>
+                        <p class="blog-excerpt" style="color: var(--text-secondary);">
+                            Master Instagram, TikTok, and Facebook algorithms. Understanding how they work is the key to organic growth.
+                        </p>
+                        <a href="#" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> January 2026</span>
+                            <span><i class="fas fa-clock"></i> 7 min read</span>
+                        </div>
+                        <h3>Mobile-First Design: Why Your Website Needs It Now</h3>
+                        <p class="blog-excerpt" style="color: var(--text-secondary);">
+                            89% of users browse on mobile. If your site isn't mobile-first, you're losing customers and Google rankings.
+                        </p>
+                        <a href="#" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> December 2025</span>
+                            <span><i class="fas fa-clock"></i> 9 min read</span>
+                        </div>
+                        <h3>From Zero to $10K: Scaling an E-Commerce Store</h3>
+                        <p class="blog-excerpt" style="color: var(--text-secondary);">
+                            A case study on how we took a client's online store from launch to $10K monthly revenue in 90 days.
+                        </p>
+                        <a href="#" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div class="page" id="contact">
+        <div class="container">
+            <h2><i class="fas fa-envelope" style="color: var(--primary-blue);"></i> Let's Work Together</h2>
+            <p class="subtitle">
+                Ready to transform your digital presence? Book a free consultation or send me a message.
+            </p>
+
+            <!-- Booking Section -->
+            <div class="booking-section scroll-reveal">
+                <h3 style="font-size: 2rem; margin-bottom: 1rem;">
+                    <i class="fas fa-calendar-alt" style="color: var(--primary-blue);"></i> 
+                    Schedule a Free Consultation
+                </h3>
+                <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                    Book a time that works for you. I'm available Monday-Friday, 12:00 AM - 2:00 PM (NY Time)
+                </p>
+                
+                <div class="booking-grid">
+                    <div class="booking-info">
+                        <div class="booking-item">
+                            <div class="booking-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <strong>Availability</strong><br>
+                                <span style="color: var(--text-secondary);">Mon-Fri: 12:00 AM - 2:00 PM (NY Time)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="booking-item">
+                            <div class="booking-icon">
+                                <i class="fas fa-gift"></i>
+                            </div>
+                            <div>
+                                <strong>Free Consultation</strong><br>
+                                <span style="color: var(--text-secondary);">15-30 minutes (No charge)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="booking-item">
+                            <div class="booking-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div>
+                                <strong>Extended Sessions</strong><br>
+                                <span style="color: var(--text-secondary);">1 hour deep dive: $75</span>
+                            </div>
+                        </div>
+                        
+                        <div class="booking-item">
+                            <div class="booking-icon">
+                                <i class="fas fa-envelope-open-text"></i>
+                            </div>
+                            <div>
+                                <strong>Confirmation</strong><br>
+                                <span style="color: var(--text-secondary);">Sent to: themxxe@gmail.com</span>
+                            </div>
+                        </div>
+                        
+                        <div style="padding: 1.5rem; background: rgba(59, 130, 246, 0.1); border-radius: 16px; border: 1px solid rgba(59, 130, 246, 0.2); margin-top: 1rem;">
+                            <h4 style="color: var(--primary-blue); margin-bottom: 0.8rem;">
+                                <i class="fas fa-check-double"></i> What We'll Discuss:
+                            </h4>
+                            <ul style="color: var(--text-secondary); line-height: 2; list-style: none;">
+                                <li><i class="fas fa-check" style="color: var(--success);"></i> Your business goals & challenges</li>
+                                <li><i class="fas fa-check" style="color: var(--success);"></i> Current digital presence audit</li>
+                                <li><i class="fas fa-check" style="color: var(--success);"></i> Growth opportunities</li>
+                                <li><i class="fas fa-check" style="color: var(--success);"></i> Custom strategy overview</li>
+                                <li><i class="fas fa-check" style="color: var(--success);"></i> Project timeline & pricing</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="calendly-embed">
+                        <div style="padding: 2rem; text-align: center; background: var(--secondary-bg); height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 16px;">
+                            <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">
+                                <i class="fas fa-calendar-plus"></i> Calendly Integration
+                            </h3>
+                            <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                                To enable booking:<br>
+                                1. Sign up at <a href="https://calendly.com" target="_blank" style="color: var(--primary-blue);">calendly.com</a> (Free)<br>
+                                2. Set your availability<br>
+                                3. Get your Calendly link<br>
+                                4. Replace this placeholder
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-grid scroll-reveal" style="margin-top: 4rem;">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <p style="color: var(--text-secondary);">Kampala, Uganda</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:themxxe@gmail.com" style="color: var(--primary-blue); text-decoration: none;">themxxe@gmail.com</a></p>
+                            <p style="font-size: 0.85rem; margin-top: 0.3rem; color: var(--text-muted);">Response Team Available</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h4>Phone / WhatsApp</h4>
+                            <p><a href="https://wa.me/256780160147" target="_blank" style="color: var(--primary-blue); text-decoration: none;">+256 780 160 147</a></p>
+                            <p style="font-size: 0.85rem; margin-top: 0.3rem; color: var(--text-muted);">Response Team Available</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p style="color: var(--text-secondary);">Mon-Fri: 12:00 AM - 2:00 PM NY Time</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">
+                            <i class="fas fa-user"></i>
+                            Your Name
+                        </label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="fas fa-envelope"></i>
+                            Email Address
+                        </label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">
+                            <i class="fas fa-briefcase"></i>
+                            Service Interested In
+                        </label>
+                        <select id="service" name="service">
+                            <option value="website">Website Development</option>
+                            <option value="mxxe-basic">MXXE Basic Package ($1,609/mo)</option>
+                            <option value="mxxe-pro">MXXE Pro Package ($3,499/mo)</option>
+                            <option value="consultation">Free Consultation</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">
+                            <i class="fas fa-comment-alt"></i>
+                            Project Details
+                        </label>
+                        <textarea id="message" name="message" required placeholder="Tell me about your project, goals, and timeline..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calendly widget script -->
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        if (typeof emailjs !== 'undefined') {
+            try {
+                emailjs.init('YOUR_PUBLIC_KEY');
+            } catch(e) {
+                console.log('EmailJS initialization failed:', e);
+            }
+        }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navigation
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+                    
+                    const targetPage = this.getAttribute('data-page');
+                    document.getElementById(targetPage).classList.add('active');
+                    
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    
+                    initScrollReveal();
+                    animateSkills();
+                    animateStats();
+                });
+            });
+
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 100) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // Animated counter
+            function animateStats() {
+                const stats = document.querySelectorAll('.stat-number');
+                stats.forEach(stat => {
+                    const target = parseInt(stat.getAttribute('data-target'));
+                    const duration = 2000;
+                    const increment = target / (duration / 16);
+                    let current = 0;
+                    
+                    const updateCounter = () => {
+                        current += increment;
+                        if (current < target) {
+                            stat.textContent = Math.floor(current);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            stat.textContent = target;
+                        }
+                    };
+                    
+                    updateCounter();
+                });
+            }
+
+            // Animate skills
+            function animateSkills() {
+                const skillBars = document.querySelectorAll('.skill-progress');
+                skillBars.forEach(bar => {
+                    const width = bar.getAttribute('data-width');
+                    setTimeout(() => {
+                        bar.style.width = width + '%';
+                    }, 200);
+                });
+            }
+
+            // Scroll reveal
+            function initScrollReveal() {
+                const reveals = document.querySelectorAll('.scroll-reveal');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('revealed');
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                reveals.forEach(reveal => {
+                    observer.observe(reveal);
+                });
+            }
+
+            // Pricing calculator
+            const websiteType = document.getElementById('websiteType');
+            const pages = document.getElementById('pages');
+            const pagesValue = document.getElementById('pagesValue');
+            const features = document.getElementById('features');
+            const timeline = document.getElementById('timeline');
+
+            function calculatePrice() {
+                const type = websiteType.value;
+                const pageCount = parseInt(pages.value);
+                const additionalFeatures = parseInt(features.value);
+                const timelineMultiplier = parseFloat(timeline.value);
+
+                let basePrice = 0;
+                if (type === 'blog') {
+                    basePrice = 75 + (pageCount * 15);
+                } else if (type === 'medium') {
+                    basePrice = 300 + (pageCount * 40);
+                } else if (type === 'ecommerce') {
+                    basePrice = 750 + (pageCount * 80);
+                }
+
+                const subtotal = basePrice + additionalFeatures;
+                const total = Math.round(subtotal * timelineMultiplier);
+
+                document.getElementById('basePrice').textContent = '$' + basePrice;
+                document.getElementById('featuresPrice').textContent = '$' + additionalFeatures;
+                document.getElementById('timelinePrice').textContent = timelineMultiplier !== 1 ? 
+                    (timelineMultiplier > 1 ? '+$' + Math.round(subtotal * (timelineMultiplier - 1)) : '-$' + Math.round(subtotal * (1 - timelineMultiplier))) : 
+                    '$0';
+                document.getElementById('totalPrice').textContent = '$' + total;
+            }
+
+            pages.addEventListener('input', function() {
+                pagesValue.textContent = this.value;
+                calculatePrice();
+            });
+
+            websiteType.addEventListener('change', calculatePrice);
+            features.addEventListener('change', calculatePrice);
+            timeline.addEventListener('change', calculatePrice);
+
+            // Form submission
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const button = this.querySelector('button[type="submit"]');
+                const originalText = button.innerHTML;
+                
+                button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                button.style.opacity = '0.6';
+                button.disabled = true;
+                
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    service: document.getElementById('service').value,
+                    message: document.getElementById('message').value,
+                    to_email: 'themxxe@gmail.com'
+                };
+                
+                if (typeof emailjs === 'undefined') {
+                    const subject = encodeURIComponent('Portfolio Contact: ' + formData.service);
+                    const body = encodeURIComponent(
+                        'Name: ' + formData.name + '\n' +
+                        'Email: ' + formData.email + '\n' +
+                        'Service: ' + formData.service + '\n\n' +
+                        'Message:\n' + formData.message
+                    );
+                    window.location.href = 'mailto:themxxe@gmail.com?subject=' + subject + '&body=' + body;
+                    
+                    button.innerHTML = '<i class="fas fa-envelope-open"></i> Opening Email Client...';
+                    setTimeout(() => {
+                        button.innerHTML = originalText;
+                        button.style.opacity = '1';
+                        button.disabled = false;
+                    }, 2000);
+                    return;
+                }
+                
+                emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+                    .then(function(response) {
+                        button.innerHTML = '<i class="fas fa-check-circle"></i> Message Sent!';
+                        button.style.background = 'var(--gradient-success)';
+                        
+                        setTimeout(() => {
+                            button.innerHTML = originalText;
+                            button.style.background = 'var(--gradient-primary)';
+                            button.style.opacity = '1';
+                            button.disabled = false;
+                            document.getElementById('contactForm').reset();
+                        }, 3000);
+                    }, function(error) {
+                        const subject = encodeURIComponent('Portfolio Contact: ' + formData.service);
+                        const body = encodeURIComponent(
+                            'Name: ' + formData.name + '\n' +
+                            'Email: ' + formData.email + '\n' +
+                            'Service: ' + formData.service + '\n\n' +
+                            'Message:\n' + formData.message
+                        );
+                        window.location.href = 'mailto:themxxe@gmail.com?subject=' + subject + '&body=' + body;
+                        
+                        button.innerHTML = '<i class="fas fa-envelope-open"></i> Opening Email Client...';
+                        setTimeout(() => {
+                            button.innerHTML = originalText;
+                            button.style.background = 'var(--gradient-primary)';
+                            button.style.opacity = '1';
+                            button.disabled = false;
+                        }, 2000);
+                    });
+            });
+
+            // Parallax effect
+            document.addEventListener('mousemove', (e) => {
+                const orbs = document.querySelectorAll('.gradient-orb');
+                const x = e.clientX / window.innerWidth;
+                const y = e.clientY / window.innerHeight;
+                
+                orbs.forEach((orb, index) => {
+                    const speed = (index + 1) * 15;
+                    orb.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+                });
+            });
+
+            // Initialize
+            calculatePrice();
+            initScrollReveal();
+            animateStats();
+            setTimeout(() => {
+                animateSkills();
+            }, 500);
+        });
+    </script>
+</body>
+</html>
